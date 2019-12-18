@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GoGreenAntalyaAdmin</string>
+    <string name="tap_to_recycle">Tap To Recycle</string>
+    <string name="what_can_you_recycle">What Can You Recycle?</string>
+    <string name="plastic">Plastic</string>
+    <string name="glass">Glass</string>
+</resources>
