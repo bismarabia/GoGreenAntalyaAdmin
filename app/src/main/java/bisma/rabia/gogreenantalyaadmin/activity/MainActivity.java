@@ -1,4 +1,4 @@
-package bisma.rabia.gogreenantalyaadmin;
+package bisma.rabia.gogreenantalyaadmin.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import bisma.rabia.gogreenantalyaadmin.R;
 import bisma.rabia.gogreenantalyaadmin.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

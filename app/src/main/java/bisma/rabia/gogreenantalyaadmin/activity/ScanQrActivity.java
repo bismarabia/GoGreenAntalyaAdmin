@@ -1,8 +1,9 @@
-package bisma.rabia.gogreenantalyaadmin;
+package bisma.rabia.gogreenantalyaadmin.activity;
+
+import android.content.Intent;
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 
 import com.google.zxing.Result;
 
@@ -16,7 +17,7 @@ public class ScanQrActivity extends AppCompatActivity implements ZXingScannerVie
     public void onCreate(Bundle state) {
         super.onCreate(state);
         mScannerView = new ZXingScannerView(this);   // Programmatically initialize the scanner view
-        setContentView(mScannerView);                // Set the scanner view as the content view
+        setContentView(mScannerView);                       // Set the scanner view as the content view
     }
 
     @Override
@@ -42,7 +43,13 @@ public class ScanQrActivity extends AppCompatActivity implements ZXingScannerVie
 
         String point = getIntent().getExtras().getString("point");
 
-        onBackPressed();
+
+        Intent intent = new Intent();
+        intent.putExtra("point", point);
+        intent.putExtra("username", userName);
+
+        setResult(9874, intent);
+        finish();
 
         // If you would like to resume scanning, call this method below:
         //mScannerView.resumeCameraPreview(this);
