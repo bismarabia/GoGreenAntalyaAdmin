@@ -16,8 +16,23 @@ android {
         enabled = true
     }
 
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file("eosio.properties").newDataInputStream())
+
     buildTypes {
+        debug {
+            resValue "string", "node_url", properties.getProperty("node_url", "")
+            resValue "string", "from_account", properties.getProperty("from_account", "")
+            resValue "string", "from_account_private_key", properties.getProperty("from_account_private_key", "")
+
+            manifestPlaceholders = [usesCleartextTraffic: "true"]
+        }
         release {
+            resValue "string", "node_url", properties.getProperty("node_url", "")
+            resValue "string", "from_account", properties.getProperty("from_account", "")
+            resValue "string", "from_account_private_key", properties.getProperty("from_account_private_key", "")
+
+            manifestPlaceholders = [usesCleartextTraffic: "false"]
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
