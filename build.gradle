@@ -18,8 +18,10 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
     }
+
+    group = 'org.gradle.go-antalya'
+    version = '1.0'
 }
 
 task clean(type: Delete) {
